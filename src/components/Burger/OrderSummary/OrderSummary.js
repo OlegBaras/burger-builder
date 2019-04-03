@@ -22,6 +22,7 @@ export default function OrderSummary(props) {
         </strong>
       </p>
       <p>Continue to checkout</p>
+
       <Button btnType='Danger' clicked={props.purchaseCanceled}>
         CANCEL
       </Button>

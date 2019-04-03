@@ -4,7 +4,6 @@ import Aux from '../../../hoc/Aux';
 import Backdrop from '../Backdrop/Backdrop';
 
 export default function Modal(props) {
-  console.log('modal: ', props);
   return (
     <Aux>
       <Backdrop show={props.show} clicked={props.modalClosed} />

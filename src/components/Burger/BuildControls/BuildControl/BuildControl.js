@@ -2,6 +2,7 @@ import React from 'react';
 import classes from './BuildControl.css';
 
 export default function BuildControl(props) {
+  console.log('build control: ', props);
   return (
     <div className={classes.BuildControl}>
       <div className={classes.Label}>{props.label}</div>

@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
-import Aux from '../../hoc/Aux';
-import classes from './Layout.css';
-import Toolbar from '../navigation/Toolbar/Toolbar';
-import SideDrawer from '../navigation/SideDrawer/SideDrawer';
+import React, { Component } from "react";
+import Aux from "../Aux/Aux";
+import classes from "./Layout.css";
+import Toolbar from "../../components/navigation/Toolbar/Toolbar";
+import SideDrawer from "../../components/navigation/SideDrawer/SideDrawer";
 
 export default class Layout extends Component {
   state = {

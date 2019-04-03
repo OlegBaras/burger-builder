@@ -21,6 +21,7 @@ export default class BurgerBuilder extends Component {
       meat: 0
     },
     totalPrice: 0,
+    currency: 'LT',
     purchasable: false,
     purchasing: false
   };
@@ -99,6 +100,8 @@ export default class BurgerBuilder extends Component {
             purchaseCanceled={this.purchaseCancelHandler}
             purchaseContinued={this.purchaseContinueHandler}
             ingredients={this.state.ingredients}
+            price={this.state.totalPrice}
+            currency={this.state.currency}
           />
         </Modal>
         <Burger ingredients={this.state.ingredients} />

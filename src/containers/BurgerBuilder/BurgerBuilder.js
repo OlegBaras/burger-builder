@@ -17,12 +17,7 @@ const INGREDIENT_PRICES = {
 
 class BurgerBuilder extends Component {
   state = {
-    ingredients: {
-      salad: 0,
-      bacon: 0,
-      cheese: 0,
-      meat: 0
-    },
+    ingredients: null,
     totalPrice: 0,
     currency: 'LT',
     purchasable: false,
@@ -33,7 +28,7 @@ class BurgerBuilder extends Component {
 
   componentDidMount() {
     axios
-      .get('/ingredients')
+      .get('/ingredients.json')
       .then(response => this.setState({ ingredients: response.data }))
       .catch(error => {
         this.setState({ error: true });
@@ -111,7 +106,7 @@ class BurgerBuilder extends Component {
       deliveryMethod: 'fastest'
     };
     axios
-      .post('/orders', order)
+      .post('/orders.json', order)
       .then(res => {
         this.setState({ loading: false, purchasing: false });
       })

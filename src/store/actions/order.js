@@ -5,7 +5,6 @@ export const purchaseBurgerSuccess = (id, orderData) => {
   return {
     action: actionTypes.PURCHASE_BURGER_SUCCESS,
     orderId: id,
-    orderData,
     orderData
   };
 };
@@ -17,16 +16,29 @@ export const purchaseBurgerFail = error => {
   };
 };
 
-export const purchaseBurgerStart = orderData => {
+export const purchaseBurgerStart = () => {
+  return {
+    type: actionTypes.PURCHASE_BURGER_START
+  };
+};
+
+export const purchaseBurger = orderData => {
   return dispatch => {
+    dispatch(purchaseBurgerStart());
     axios
       .post('/orders.json', orderData)
       .then(response => {
-        console.log(response.data);
-        dispatch(purchaseBurgerSuccess(response.data, orderData));
+        dispatch(purchaseBurgerSuccess(response.data.name, orderData));
       })
       .catch(err => {
         dispatch(purchaseBurgerFail(err));
       });
+  };
+};
+// 'https://react-my-burger-d87de.firebaseio.com/orders.json',
+
+export const purchaseInit = () => {
+  return {
+    type: actionTypes.PURCHASE_INIT
   };
 };

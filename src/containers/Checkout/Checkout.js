@@ -22,6 +22,7 @@ class Checkout extends Component {
       ) : null;
       summary = (
         <div>
+          {purchasedRedirect}
           <CheckoutSummary
             checkoutCancelled={this.checkoutCancelledHandler}
             checkoutContinue={this.checkoutContinueHandler}

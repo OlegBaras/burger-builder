@@ -1,18 +1,13 @@
-import React, { Component } from "react";
-import Aux from "../../../hoc/Aux/Aux";
-import Button from "../../UI/Button/Button";
+import React, { Component } from 'react';
+import Aux from '../../../hoc/Aux/Aux';
+import Button from '../../UI/Button/Button';
 
 export default class OrderSummary extends Component {
-  // This cuold be a functional component. Only for demo purpose the life cycle is set up here
-  componentWillUpdate() {
-    console.log("[OrderSummary] Willupdate");
-  }
-
   render() {
     const ingredientSummary = Object.keys(this.props.ingredients).map(i => {
       return (
         <li key={i}>
-          <span style={{ textTransform: "capitalize" }}>{i}</span>:
+          <span style={{ textTransform: 'capitalize' }}>{i}</span>:
           {this.props.ingredients[i]}
         </li>
       );
@@ -29,10 +24,10 @@ export default class OrderSummary extends Component {
         </p>
         <p>Continue to checkout</p>
 
-        <Button btnType="Danger" clicked={this.props.purchaseCanceled}>
+        <Button btnType='Danger' clicked={this.props.purchaseCanceled}>
           CANCEL
         </Button>
-        <Button btnType="Success" clicked={this.props.purchaseContinued}>
+        <Button btnType='Success' clicked={this.props.purchaseContinued}>
           CONTINUE
         </Button>
       </Aux>
